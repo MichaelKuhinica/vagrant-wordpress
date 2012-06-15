@@ -20,13 +20,13 @@ Vagrant::Config.run do |config|
   # Forward a port from the guest to the host, which allows for outside
   # computers to access the VM, whereas host only networking does not.
   config.vm.forward_port 80,   8080  #http
-  config.vm.forward_port 3306, 3306  #mysql
+  config.vm.forward_port 3306, 3307  #mysql
 
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
-  config.vm.share_folder "theme", "/var/www/wordpress/wp-content/themes/theme",
-    "./theme"
+  config.vm.share_folder "wp-content", "/var/www/wordpress/wp-content/",
+    "./wp-content"
 
   # Enable provisioning with chef solo, specifying a cookbooks path (relative
   # to this Vagrantfile), and adding some recipes and/or roles.
