@@ -43,7 +43,7 @@ if platform?(%w{ debian redhat centos fedora suse })
     action :install
   end
 
-else
+#else
 
   gem_package "mysql" do
     action :install
